@@ -1,0 +1,14 @@
+Scope quiz
+pi = 3.14
+
+def get_area_of_circle(radius):
+    area = pi * radius * radius
+    return area
+
+Does the get_area_of_circle function have access to the variable pi?
+
+1 . yes because it is defined in the global scope
+2 . yes because functions can always access any variable
+3. no
+
+ans - 1

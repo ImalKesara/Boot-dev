@@ -1,0 +1,9 @@
+Without returning it, can the area variable inside the get_area_of_circle function be accessed outside of the function?
+
+
+1.yes becuase tomatoes are fruits
+2.yes all variables are accessible anywhere in the program
+3.no variables defiend inside a function are not accessible outside of it.
+
+
+ans = 3
