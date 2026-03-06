@@ -1,3 +1,5 @@
+from mymath import add, subtract
+
 # step 1: create a file and write some content to it
 
 file = open("sample.txt", "r")
@@ -58,7 +60,7 @@ print("================================================")
 
 
 # step custom exception
-    # inherit from the base Exception class
+# inherit from the base Exception class
 class NegativeNumberError(Exception):
     pass
 
@@ -69,3 +71,100 @@ try:
         raise NegativeNumberError("Negative numbers are not allowed")
 except NegativeNumberError as e:
     print("Error:", e)
+
+print("================================================")
+
+print(add(5, 3))
+print(subtract(5, 3))
+
+print("================================================")
+
+
+# Part 4 object oriented programming
+class Student:
+    # self is a reference to the current instance of the class, it is used to access the attributes and methods of the class
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+
+class Teacher:
+    #  default constructor
+    def __init__(self):
+        pass
+
+    def display_info(self):
+        print(f"Name: {self.name}, Subject: {self.subject}")
+
+
+s1 = Student("Gomez", 20)
+s1.display_info()
+
+print("================================================")
+
+# step 9 inheritance
+
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+
+class Student(Person):
+    def study(self):
+        print(f"{self.name} is studying and his age is {self.age}")
+
+
+s2 = Student("Morticia", 22)
+s2.display_info()
+s2.study()
+
+print("================================================")
+
+
+class bankAccount:
+    def __init__(self):
+        self.__balance = 0  # private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+
+account = bankAccount()
+account.deposit(5000)
+print("Balance:", account.get_balance())
+
+print("================================================")
+
+
+class Animal:
+    def __init__(self):
+        print("parent  constructor called")
+
+    def make_sound(self):
+        print("Animal makes a sound")
+
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Dog barks")
+
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Cat meows")
+
+
+animals = [Dog(), Cat()]
+for animal in animals:
+    animal.make_sound()
